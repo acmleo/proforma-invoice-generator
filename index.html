@@ -223,6 +223,50 @@
             resize: vertical;
         }
         
+        /* 汇率输入框样式 */
+        .exchange-rate-container {
+            background-color: #fff9e6;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            border-left: 4px solid #f39c12;
+        }
+        
+        .exchange-rate-container h3 {
+            color: #e67e22;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .exchange-rate-container h3 i {
+            color: #f39c12;
+        }
+        
+        .exchange-rate-input {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .exchange-rate-input label {
+            font-weight: 600;
+            color: #d35400;
+            white-space: nowrap;
+        }
+        
+        .exchange-rate-input input {
+            flex: 1;
+            max-width: 200px;
+            padding: 10px 15px;
+            border: 1px solid #f1c40f;
+            border-radius: 6px;
+            font-size: 1rem;
+            background-color: #fffdf0;
+        }
+        
         /* 产品部分样式 */
         .products-section {
             margin-top: 20px;
@@ -266,6 +310,100 @@
         
         .btn-delete:hover {
             background-color: #c0392b;
+        }
+        
+        /* 图片上传区域 */
+        .image-upload-container {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 6px;
+            border: 1px dashed var(--border-color);
+        }
+        
+        .image-upload-container h4 {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            color: var(--dark-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .image-upload-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            border: 2px dashed var(--primary-color);
+            border-radius: 6px;
+            background-color: #f0f7ff;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        .image-upload-area:hover {
+            background-color: #e1f0ff;
+            border-color: #2980b9;
+        }
+        
+        .image-upload-area i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .image-upload-area p {
+            color: #555;
+            font-size: 0.9rem;
+        }
+        
+        .image-upload-area input[type="file"] {
+            display: none;
+        }
+        
+        .image-preview-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .image-preview-item {
+            position: relative;
+            width: 96px;
+            height: 96px;
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .image-preview-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .remove-image-btn {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            background-color: rgba(231, 76, 60, 0.9);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            cursor: pointer;
+            z-index: 10;
         }
         
         /* 按钮样式 */
@@ -363,6 +501,13 @@
             margin-top: 15px;
         }
         
+        /* 为图片生成添加额外内边距 */
+        .preview-container.printable {
+            padding: 40px;
+            background-color: #ffffff;
+            border: 2px dashed #ddd;
+        }
+        
         .invoice-preview {
             font-family: Arial, sans-serif;
             font-size: 12px;
@@ -372,35 +517,36 @@
         
         .invoice-header {
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             padding-bottom: 15px;
             border-bottom: 2px solid #333;
         }
         
         .company-name {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: bold;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
         
         .company-address {
-            font-size: 12px;
+            font-size: 13px;
             color: #666;
         }
         
         .invoice-title {
             text-align: center;
-            font-size: 16px;
+            font-size: 18px;
             font-weight: bold;
-            margin: 20px 0;
+            margin: 25px 0;
             text-decoration: underline;
         }
         
         .invoice-info {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             flex-wrap: wrap;
+            padding: 0 10px;
         }
         
         .invoice-info > div {
@@ -410,21 +556,23 @@
         .contact-info {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             flex-wrap: wrap;
+            padding: 0 10px;
         }
         
         .invoice-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 11px;
+            margin: 25px 0;
+            font-size: 12px;
         }
         
         .invoice-table th, .invoice-table td {
             border: 1px solid #333;
-            padding: 8px;
+            padding: 10px;
             text-align: left;
+            vertical-align: top;
         }
         
         .invoice-table th {
@@ -432,23 +580,47 @@
             font-weight: bold;
         }
         
+        .product-image-cell {
+            text-align: center;
+            width: 100px;
+        }
+        
+        .product-image-cell img {
+            max-width: 96px;
+            max-height: 96px;
+            object-fit: contain;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        
         .total-section {
             text-align: right;
-            margin: 20px 0;
-            font-size: 14px;
+            margin: 25px 0;
+            font-size: 15px;
             font-weight: bold;
+            padding: 0 10px;
+        }
+        
+        .exchange-rate-display {
+            text-align: right;
+            margin: 10px 0;
+            font-size: 13px;
+            color: #666;
+            padding: 0 10px;
         }
         
         .terms-section {
-            margin-top: 25px;
-            font-size: 11px;
+            margin-top: 30px;
+            font-size: 12px;
             line-height: 1.5;
+            padding: 0 10px;
         }
         
         .bank-details {
-            margin-top: 15px;
-            font-size: 11px;
+            margin-top: 20px;
+            font-size: 12px;
             line-height: 1.6;
+            padding: 0 10px;
         }
         
         /* 页脚样式 */
@@ -514,6 +686,43 @@
             
             .preview-container {
                 max-height: 500px;
+            }
+            
+            .exchange-rate-input {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+            
+            .exchange-rate-input input {
+                max-width: 100%;
+                width: 100%;
+            }
+            
+            .invoice-info, .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .invoice-info > div, .contact-info > div {
+                width: 100%;
+            }
+            
+            .invoice-table {
+                font-size: 10px;
+            }
+            
+            .invoice-table th, .invoice-table td {
+                padding: 6px;
+            }
+            
+            .product-image-cell {
+                width: 60px;
+            }
+            
+            .product-image-cell img {
+                max-width: 60px;
+                max-height: 60px;
             }
         }
         
@@ -590,10 +799,10 @@
                         </div>
                     </div>
                     <div class="feature">
-                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-image"></i>
                         <div>
-                            <h3>完全自定义</h3>
-                            <p>支持添加多个产品，自定义所有字段内容</p>
+                            <h3>产品图片</h3>
+                            <p>支持为每个产品上传图片，自动压缩为96px</p>
                         </div>
                     </div>
                     <div class="feature">
@@ -653,6 +862,18 @@
                             </div>
                         </div>
                         
+                        <!-- 汇率输入区域 -->
+                        <div class="exchange-rate-container">
+                            <h3><i class="fas fa-exchange-alt"></i> 汇率设置</h3>
+                            <div class="exchange-rate-input">
+                                <label for="exchangeRate">美元兑人民币汇率 (USD/CNY):</label>
+                                <input type="number" id="exchangeRate" class="form-control" step="0.01" min="0.01" value="7.08">
+                            </div>
+                            <p style="font-size: 0.85rem; color: #7f8c8d; margin-top: 8px;">
+                                <i class="fas fa-info-circle"></i> 汇率用于将美元金额转换为人民币金额
+                            </p>
+                        </div>
+                        
                         <div class="products-section">
                             <div class="section-title">
                                 <i class="fas fa-boxes"></i>
@@ -706,7 +927,7 @@
                             <h2>发票预览</h2>
                         </div>
                         
-                        <div class="preview-container">
+                        <div class="preview-container" id="previewContainer">
                             <div id="invoicePreview" class="invoice-preview">
                                 <!-- 预览内容将通过JS动态生成 -->
                             </div>
@@ -757,7 +978,8 @@
                 qty: "1,040", 
                 units: "KG", 
                 amount: "1,976", 
-                remark: "20KG/roll" 
+                remark: "20KG/roll",
+                images: []
             },
             { 
                 no: 2, 
@@ -769,7 +991,8 @@
                 qty: "520", 
                 units: "KG", 
                 amount: "988", 
-                remark: "20KG/roll" 
+                remark: "20KG/roll",
+                images: []
             },
             { 
                 no: 3, 
@@ -781,7 +1004,8 @@
                 qty: "520", 
                 units: "KG", 
                 amount: "988", 
-                remark: "20KG/roll" 
+                remark: "20KG/roll",
+                images: []
             },
             { 
                 no: 4, 
@@ -793,7 +1017,8 @@
                 qty: "2,080", 
                 units: "KG", 
                 amount: "158", 
-                remark: "4 ROLL" 
+                remark: "4 ROLL",
+                images: []
             }
         ];
         
@@ -818,7 +1043,8 @@
                 qty: "",
                 units: "",
                 amount: "",
-                remark: ""
+                remark: "",
+                images: []
             });
         });
         
@@ -827,6 +1053,52 @@
         
         // 初始化预览
         updateInvoicePreview();
+        
+        // 图片压缩函数
+        function compressImage(file, maxWidth = 96, maxHeight = 96, quality = 0.8) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                
+                reader.onload = function(event) {
+                    const img = new Image();
+                    img.src = event.target.result;
+                    
+                    img.onload = function() {
+                        const canvas = document.createElement('canvas');
+                        let width = img.width;
+                        let height = img.height;
+                        
+                        // 计算缩放比例
+                        if (width > height) {
+                            if (width > maxWidth) {
+                                height = Math.round(height * maxWidth / width);
+                                width = maxWidth;
+                            }
+                        } else {
+                            if (height > maxHeight) {
+                                width = Math.round(width * maxHeight / height);
+                                height = maxHeight;
+                            }
+                        }
+                        
+                        canvas.width = width;
+                        canvas.height = height;
+                        
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(img, 0, 0, width, height);
+                        
+                        // 转换为base64
+                        const compressedBase64 = canvas.toDataURL('image/jpeg', quality);
+                        resolve(compressedBase64);
+                    };
+                    
+                    img.onerror = reject;
+                };
+                
+                reader.onerror = reject;
+            });
+        }
         
         // 添加产品行函数
         function addProductRow(product) {
@@ -883,6 +1155,25 @@
                     <label>备注 (Remark):</label>
                     <input type="text" class="form-control product-remark" value="${escapeHtml(product.remark)}">
                 </div>
+                <div class="image-upload-container">
+                    <h4><i class="fas fa-images"></i> 产品图片 (可选)</h4>
+                    <div class="image-upload-area" id="uploadArea-${product.no}">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>点击或拖放图片到这里上传</p>
+                        <p style="font-size: 0.8rem; color: #888; margin-top: 5px;">支持JPG、PNG格式，图片将被压缩为96px</p>
+                        <input type="file" class="product-image-input" accept="image/*" multiple>
+                    </div>
+                    <div class="image-preview-container" id="imagePreview-${product.no}">
+                        ${product.images && product.images.length > 0 ? product.images.map((img, index) => `
+                            <div class="image-preview-item">
+                                <img src="${img}" alt="产品图片 ${index + 1}">
+                                <button type="button" class="remove-image-btn" data-index="${index}">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        `).join('') : ''}
+                    </div>
+                </div>
             `;
             
             productContainer.appendChild(productRow);
@@ -903,6 +1194,143 @@
                     });
                 }
             });
+            
+            // 获取上传区域和预览容器
+            const uploadArea = productRow.querySelector(`#uploadArea-${product.no}`);
+            const fileInput = productRow.querySelector('.product-image-input');
+            const imagePreviewContainer = productRow.querySelector(`#imagePreview-${product.no}`);
+            
+            // 存储该产品的图片数据
+            productRow.productImages = product.images || [];
+            
+            // 点击上传区域触发文件选择
+            uploadArea.addEventListener('click', () => {
+                fileInput.click();
+            });
+            
+            // 拖放功能
+            uploadArea.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                uploadArea.style.backgroundColor = '#d9ecff';
+                uploadArea.style.borderColor = '#2980b9';
+            });
+            
+            uploadArea.addEventListener('dragleave', () => {
+                uploadArea.style.backgroundColor = '#f0f7ff';
+                uploadArea.style.borderColor = 'var(--primary-color)';
+            });
+            
+            uploadArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                uploadArea.style.backgroundColor = '#f0f7ff';
+                uploadArea.style.borderColor = 'var(--primary-color)';
+                
+                if (e.dataTransfer.files.length) {
+                    handleImageUpload(e.dataTransfer.files, productRow, imagePreviewContainer);
+                }
+            });
+            
+            // 文件选择变化
+            fileInput.addEventListener('change', (e) => {
+                if (e.target.files.length) {
+                    handleImageUpload(e.target.files, productRow, imagePreviewContainer);
+                    // 清空文件输入，以便可以再次选择相同的文件
+                    e.target.value = '';
+                }
+            });
+            
+            // 处理图片上传
+            async function handleImageUpload(files, productRow, previewContainer) {
+                const maxImages = 5; // 每个产品最多上传5张图片
+                const currentCount = productRow.productImages.length;
+                
+                if (currentCount + files.length > maxImages) {
+                    alert(`每个产品最多只能上传${maxImages}张图片。您已经上传了${currentCount}张。`);
+                    return;
+                }
+                
+                for (let i = 0; i < files.length; i++) {
+                    const file = files[i];
+                    
+                    // 检查文件类型
+                    if (!file.type.match('image.*')) {
+                        alert(`文件 "${file.name}" 不是图片格式，已跳过。`);
+                        continue;
+                    }
+                    
+                    // 检查文件大小（限制为5MB）
+                    if (file.size > 5 * 1024 * 1024) {
+                        alert(`图片 "${file.name}" 太大（超过5MB），已跳过。`);
+                        continue;
+                    }
+                    
+                    try {
+                        // 显示加载提示
+                        const loadingMsg = document.createElement('div');
+                        loadingMsg.innerHTML = `<i class="fas fa-spinner fa-spin"></i> 正在压缩图片 "${file.name}"...`;
+                        loadingMsg.style.cssText = 'color: #3498db; font-size: 0.85rem; margin: 5px 0;';
+                        previewContainer.appendChild(loadingMsg);
+                        
+                        // 压缩图片
+                        const compressedImage = await compressImage(file, 96, 96, 0.8);
+                        
+                        // 移除加载提示
+                        loadingMsg.remove();
+                        
+                        // 添加到产品图片数组
+                        productRow.productImages.push(compressedImage);
+                        
+                        // 创建预览
+                        const imageIndex = productRow.productImages.length - 1;
+                        const previewItem = document.createElement('div');
+                        previewItem.className = 'image-preview-item';
+                        previewItem.innerHTML = `
+                            <img src="${compressedImage}" alt="产品图片 ${imageIndex + 1}">
+                            <button type="button" class="remove-image-btn" data-index="${imageIndex}">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        `;
+                        
+                        // 添加删除按钮事件
+                        const removeBtn = previewItem.querySelector('.remove-image-btn');
+                        removeBtn.addEventListener('click', function() {
+                            const index = parseInt(this.getAttribute('data-index'));
+                            productRow.productImages.splice(index, 1);
+                            previewItem.remove();
+                            
+                            // 重新索引剩余的图片
+                            const remainingPreviews = previewContainer.querySelectorAll('.image-preview-item');
+                            remainingPreviews.forEach((preview, idx) => {
+                                const btn = preview.querySelector('.remove-image-btn');
+                                btn.setAttribute('data-index', idx);
+                            });
+                        });
+                        
+                        previewContainer.appendChild(previewItem);
+                        
+                    } catch (error) {
+                        console.error('图片压缩失败:', error);
+                        alert(`图片 "${file.name}" 处理失败，请重试。`);
+                    }
+                }
+            }
+            
+            // 为已有的图片添加删除事件
+            const existingRemoveBtns = productRow.querySelectorAll('.remove-image-btn');
+            existingRemoveBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    productRow.productImages.splice(index, 1);
+                    this.closest('.image-preview-item').remove();
+                    
+                    // 重新索引剩余的图片
+                    const remainingPreviews = previewContainer.querySelectorAll('.image-preview-item');
+                    remainingPreviews.forEach((preview, idx) => {
+                        const btn = preview.querySelector('.remove-image-btn');
+                        btn.setAttribute('data-index', idx);
+                    });
+                });
+            });
         }
         
         // 更新预览函数
@@ -917,6 +1345,7 @@
             const shipmentTerms = document.getElementById('shipmentTerms').value;
             const paymentTerms = document.getElementById('paymentTerms').value;
             const leadTime = document.getElementById('leadTime').value;
+            const exchangeRate = parseFloat(document.getElementById('exchangeRate').value) || 7.08;
             
             // 收集产品数据
             const products = [];
@@ -933,7 +1362,8 @@
                     qty: row.querySelector('.product-qty').value,
                     units: row.querySelector('.product-units').value,
                     amount: row.querySelector('.product-amount').value,
-                    remark: row.querySelector('.product-remark').value
+                    remark: row.querySelector('.product-remark').value,
+                    images: row.productImages || []
                 };
                 products.push(product);
                 
@@ -944,6 +1374,9 @@
             
             // 格式化日期
             const formattedDate = formatDate(invoiceDate);
+            
+            // 计算人民币总金额
+            const totalAmountCNY = totalAmount * exchangeRate;
             
             // 构建预览HTML
             const previewHTML = `
@@ -977,6 +1410,7 @@
                             <th>Q'TY</th>
                             <th>UNITS</th>
                             <th>AMOUNT USD</th>
+                            <th>Picture</th>
                             <th>Remark</th>
                         </tr>
                     </thead>
@@ -987,7 +1421,15 @@
                             const specCell = product.specification 
                                 ? `<td>${escapeHtml(product.specification)}</td>` 
                                 : '';
-                                
+                            
+                            // 生成图片HTML
+                            let imagesHTML = '';
+                            if (product.images && product.images.length > 0) {
+                                imagesHTML = product.images.map(img => 
+                                    `<img src="${img}" alt="产品图片" style="margin-bottom: 2px;">`
+                                ).join('<br>');
+                            }
+                            
                             return `
                                 <tr>
                                     <td>${index + 1}</td>
@@ -999,6 +1441,7 @@
                                     <td>${escapeHtml(product.qty)}</td>
                                     <td>${escapeHtml(product.units)}</td>
                                     <td>$${escapeHtml(product.amount)}</td>
+                                    <td class="product-image-cell">${imagesHTML}</td>
                                     <td>${escapeHtml(product.remark)}</td>
                                 </tr>
                             `;
@@ -1006,9 +1449,13 @@
                     </tbody>
                 </table>
                 
+                <div class="exchange-rate-display">
+                    汇率: 1 USD = ${exchangeRate.toFixed(4)} CNY
+                </div>
+                
                 <div class="total-section">
                     <div><strong>Total Amount</strong> $${totalAmount.toFixed(2)}</div>
-                    <div><strong>Total Amount</strong> ¥${(totalAmount * 7.08).toFixed(2)}</div>
+                    <div><strong>Total Amount</strong> ¥${totalAmountCNY.toFixed(2)}</div>
                 </div>
                 
                 <div class="terms-section">
@@ -1059,14 +1506,22 @@
             loadingIndicator.style.display = 'block';
             
             // 获取预览元素
+            const previewContainer = document.getElementById('previewContainer');
             const invoiceElement = document.getElementById('invoicePreview');
+            
+            // 为生成图片添加额外的内边距类
+            previewContainer.classList.add('printable');
             
             // 使用html2canvas将预览转换为图片
             html2canvas(invoiceElement, {
                 scale: 2,
                 useCORS: true,
                 backgroundColor: '#ffffff',
-                logging: false
+                logging: false,
+                width: invoiceElement.offsetWidth + 80, // 增加宽度
+                height: invoiceElement.offsetHeight + 80, // 增加高度
+                windowWidth: invoiceElement.scrollWidth + 80,
+                windowHeight: invoiceElement.scrollHeight + 80
             }).then(canvas => {
                 // 创建下载链接
                 const link = document.createElement('a');
@@ -1074,10 +1529,14 @@
                 link.href = canvas.toDataURL('image/png');
                 link.click();
                 
+                // 移除打印样式类
+                previewContainer.classList.remove('printable');
+                
                 loadingIndicator.style.display = 'none';
             }).catch(error => {
                 console.error('生成图片时出错:', error);
                 alert('生成图片时出错，请重试。错误信息: ' + error.message);
+                previewContainer.classList.remove('printable');
                 loadingIndicator.style.display = 'none';
             });
         }
