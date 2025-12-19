@@ -139,21 +139,15 @@
             color: var(--gray-color);
         }
         
-        /* 生成器主体 */
+        /* 生成器主体 - 改为上下布局 */
         .generator-container {
             display: flex;
             flex-direction: column;
             gap: 30px;
         }
         
-        @media (min-width: 992px) {
-            .generator-container {
-                flex-direction: row;
-            }
-        }
-        
         .input-section, .preview-section {
-            flex: 1;
+            width: 100%;
         }
         
         .section-card {
@@ -161,7 +155,6 @@
             border-radius: 10px;
             padding: 25px;
             box-shadow: 0 4px 12px var(--shadow-color);
-            height: 100%;
             display: flex;
             flex-direction: column;
         }
@@ -366,7 +359,8 @@
             padding: 20px;
             flex-grow: 1;
             overflow-y: auto;
-            max-height: 700px;
+            max-height: 600px;
+            margin-top: 15px;
         }
         
         .invoice-preview {
@@ -512,6 +506,14 @@
             
             .features {
                 grid-template-columns: 1fr;
+            }
+            
+            .section-card {
+                padding: 15px;
+            }
+            
+            .preview-container {
+                max-height: 500px;
             }
         }
         
@@ -696,7 +698,7 @@
                     </div>
                 </div>
                 
-                <!-- 预览区域 -->
+                <!-- 预览区域 - 放在下方 -->
                 <div class="preview-section">
                     <div class="section-card">
                         <div class="section-title">
